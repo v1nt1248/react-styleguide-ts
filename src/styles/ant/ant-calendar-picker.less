@@ -1,0 +1,44 @@
+.ant-calendar-picker {
+	width: 115px;
+	background-color: transparent;
+	input {
+		background-color: transparent;
+	}
+}
+
+.ant-icon(){
+	position: absolute;
+	height: 13px;
+	width: 8px;
+	margin-top: -7px;
+	line-height: 14px;
+	font-size: 13px;
+}
+
+.ant-calendar-picker-icon {
+	.ant-icon();
+	right: 8px;
+	top: 35%;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	&::after {
+		content: '\2335';
+		font-family: 'anticon';
+		font-size: 13px;
+		color: #000000;
+		display: inline-block;
+		line-height: 1;
+		font-weight: bold;
+		position: relative;
+	}
+}
+
+.ant-calendar-picker-clear {
+	.ant-icon();
+	right: 9px;
+	top: 43%;
+}

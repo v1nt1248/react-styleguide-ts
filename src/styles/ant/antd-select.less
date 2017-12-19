@@ -1,0 +1,39 @@
+.ant-select-selection {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	background-color: transparent;
+
+	.ant-select-selection__rendered {
+		margin-left: 0;
+		line-height: 32px;
+	}
+
+	&--single{
+		height: 32px;
+		&:hover{
+			height: 32px;
+		}
+	}
+
+	&:hover {
+		border-bottom-width: 2px;
+	}
+
+	&:focus {
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		box-shadow: none;
+		border-bottom-width: 2px;
+	}
+}
+
+.ant-select-dropdown-menu-item:hover {
+	background-color: transparent;
+	color: @primary-color;
+}
+
+.ant-select-dropdown-menu-item-active {
+	background-color: transparent;
+}

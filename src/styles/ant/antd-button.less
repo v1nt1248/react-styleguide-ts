@@ -1,0 +1,71 @@
+.ant-btn {
+	position: relative;
+	display: inline-flex;
+	font-size: 22px;
+	height: 40px;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	line-height: 0;
+}
+
+.ant-btn span {
+	vertical-align: 0;
+}
+
+.ant-btn-dashed {
+	background-color: transparent;
+	border: solid 1px #efefef;
+}
+
+.ant-btn:hover {
+	background-color: @dark-green;
+	color: @btn-primary-color;
+}
+
+.ant-btn-default:hover {
+	background-color: @chinese-white;
+	color: @text-color;
+	border-color: @cultured;
+}
+.ant-btn-dashed:hover {
+	background-color: transparent;
+	border-color: @green;
+	color: @green;
+}
+
+.ant-btn:active {
+	background-color: @dark-green;
+	color: @ash-green;
+}
+
+.ant-btn-default:active {
+	background-color: @chinese-white;
+	color: @cool-grey;
+	border-color: @cultured;
+}
+.ant-btn-dashed:active {
+	background-color: transparent;
+	border-color: @dark-green;
+	color: @dark-green;
+}
+
+.ant-btn:focus {
+	background-color: @primary-color;
+}
+.ant-btn-dashed:focus {
+	background-color: transparent;
+}
+
+.ant-btn-default:focus {
+	background-color: @cultured;
+	color: @text-color;
+	border-color: @cultured;
+}
+
+.ant-btn-ghost,
+.ant-btn-ghost:hover,
+.ant-btn-ghost:focus {
+	color: fade(@heading-color, 50%);
+	background-color: transparent;
+}

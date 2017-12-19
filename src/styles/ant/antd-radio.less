@@ -1,0 +1,57 @@
+@import '../variables';
+
+.ant-radio-wrapper {
+	font-size: 16px;
+
+	.ant-radio-inner {
+		width: 21px;
+		height: 21px;
+		border-width: 1px;
+	}
+	.ant-radio-checked .ant-radio-inner {
+		border-width: 5px;
+	}
+	.ant-radio-checked .ant-radio-inner:after {
+		background-color: transparent;
+	}
+}
+
+.ant-radio-button-wrapper {
+	display: inline-flex;
+	height: 40px;
+	line-height: 40px;
+	background-color: @white;
+	border: solid 1px @green;
+	color: @grey;
+	float: left;
+
+	span {
+		margin: auto;
+		font-family: Rubik;
+		font-size: 16px;
+		text-align: center;
+	}
+}
+
+.ant-radio-button-wrapper-checked {
+	background-color: @green;
+	border: solid 1px @green;
+	color: @white;
+}
+
+.ant-radio-button-wrapper:hover {
+	color: @grey;
+}
+
+.ant-radio-button-wrapper-checked:hover {
+	color: @white;
+}
+
+.ant-radio-button-wrapper:first-child {
+	border-radius: 21px 0 0 21px;
+	border-left: solid 1px @green;
+}
+
+.ant-radio-button-wrapper:last-child {
+	border-radius: 0 21px 21px 0;
+}

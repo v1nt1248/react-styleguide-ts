@@ -1,0 +1,37 @@
+@import '../variables';
+
+@color : rgb(204,204,204);
+
+.ant-rate-star-half .ant-rate-star-first .svg {
+	fill: @color;
+}
+.ant-rate-star-full .ant-rate-star-second .svg {
+	fill: @color;
+}
+
+.fillGreen(){
+	fill: @green;
+	path{
+		stroke: @green;
+	}
+}
+
+.ant-rate.greenFill{
+	.ant-rate-star-half .ant-rate-star-first .svg{
+		.fillGreen()
+	}
+
+	.ant-rate-star-full .ant-rate-star-second .svg{
+		.fillGreen()
+	}
+}
+
+.ant-rate:hover{
+	.ant-rate-star-full .svg{
+		.fillGreen()
+	}
+
+	.ant-rate-star-half .ant-rate-star-first .svg{
+		.fillGreen()
+	}
+}

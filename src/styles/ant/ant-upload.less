@@ -1,0 +1,48 @@
+@import '../variables';
+
+@width: 192px;
+@height: 120px;
+
+.base() {
+	width: @width;
+	height: @height;
+	border-radius: 4px;
+}
+
+.ant-upload-list-picture-card .ant-upload-list-item {
+	.base();
+	padding: 0;
+}
+
+.ant-upload.ant-upload-select-picture-card {
+	.base();
+	border: solid 1px @warm-grey;
+}
+
+.ant-upload-list-item div.ant-upload-list-item-info {
+	border-radius: 4px;
+}
+
+.ant-upload-list-item .ant-upload-list-item-info a.ant-upload-list-item-thumbnail {
+	.base();
+	display: flex;
+}
+
+.ant-upload-list-item .ant-upload-list-item-info a.ant-upload-list-item-thumbnail img {
+	width: auto;
+	height: auto;
+	//min-height: 100%;
+	//min-width: 100%;
+	max-height: 130%;
+	max-width: 130%;
+
+	margin: auto;
+}
+
+.uploadModal .ant-modal-close-x{
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	border-radius: 100%;
+	background-color: white;
+}
