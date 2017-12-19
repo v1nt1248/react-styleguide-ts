@@ -1,5 +1,5 @@
 // const path = require('path')
-// const Autoprefixer = require('autoprefixer')
+const Autoprefixer = require('autoprefixer')
 // const Webpack = require('webpack')
 
 // const appPath = Path.resolve(__dirname, '../src')
@@ -9,7 +9,7 @@ module.exports = {
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
-    path: __dirname +  '/dist'
+    path: __dirname + '/dist'
   },
 
   // Enable sourcemaps for debugging webpack's output.
@@ -33,7 +33,41 @@ module.exports = {
         enforce: 'pre',
         test: /\.js$/,
         loader: 'source-map-loader'
-      }
+      },
+
+      {
+        test: /\.less$/,
+        include: __dirname + '/src',
+        use: [
+          'style-loader',
+          {
+            loader: 'typings-for-css-modules-loader?modules&less',
+            options: {
+              sourceMap: true,
+              modules: true,
+              camelCase: true,
+              localIdentName: '[folder]__[local]--[hash:base64:5]',
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: () => [Autoprefixer],
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              paths: [
+                __dirname + '/src/styles',
+                __dirname + '/node_modules/antd/dist'
+              ],
+              sourceMap: true,
+            },
+          },
+        ],
+      },
     ]
   },
 
