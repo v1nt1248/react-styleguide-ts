@@ -1,11 +1,8 @@
 import * as React from 'react'
-import * as css from './styles.less'
-
-console.log(css)
+import * as css from './hr.less'
 
 export interface HrProps {
   margin?: number,
-  style?: Object
 }
 
 export const Hr = (props: HrProps) => {
@@ -15,7 +12,7 @@ export const Hr = (props: HrProps) => {
     marginBottom: props.margin
   }
 
-  return <div style={style}></div>
+  return <div className={(css as any).root} style={style}></div>
 }
 
-// className={css.hr}
+export default Hr

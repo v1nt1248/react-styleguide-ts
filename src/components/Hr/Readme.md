@@ -1,9 +1,8 @@
-Hr example:
-
-```typescript
+Without margin-top & margin-bottom
+```jsx
 <Hr />
 ```
-
-```typescript
+With margin-top & margin-bottom
+```jsx
 <Hr margin={30}/>
 ```

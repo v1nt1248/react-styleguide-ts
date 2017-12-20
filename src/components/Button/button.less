@@ -1,0 +1,185 @@
+@import '../../styles/variables';
+
+.iconColor(@iColor){
+	svg {
+		path {
+			fill: @iColor;
+			stroke: @iColor;
+		}
+	}
+}
+
+.button {
+	position: relative;
+	box-sizing: border-box;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	outline-width: 0;
+	cursor: pointer;
+	&:focus {
+		border: none;
+		outline-width: 0;
+	}
+
+	span {
+		display: block;
+		position: relative;
+	}
+
+	&-size-small {
+		height: 40px;
+		span {
+			font-size: 16px;
+		}
+	}
+
+	&-size-default {
+		height: 50px;
+		span {
+			font-size: 22px;
+		}
+	}
+
+	&-size-large {
+		height: 56px;
+		span {
+			font-size: 22px;
+		}
+	}
+
+	&-default {
+		background-color: @cultured;
+		color: @black;
+		.iconColor(@black);
+		&:hover, &:focus {
+			background-color: @chinese-white;
+		}
+		&:active {
+			color: rgb(136, 136, 136);
+			.iconColor(rgb(136, 136, 136));
+		}
+		&[disabled] {
+			background-color: transparent;
+			color: fade(@light-grey, 50%);
+			.iconColor(fade(@light-grey, 50%));
+			border: 1px solid fade(@black, 10%);
+			cursor: not-allowed;
+		}
+	}
+
+	&-primary {
+		background-color: @green;
+		color: @white;
+		.iconColor(@white);
+
+
+		&:hover, &:focus {
+			background-color: @dark-green;
+		}
+		&:active {
+			color: rgb(178, 227, 162);
+			.iconColor(rgb(178, 227, 162));
+		}
+		&[disabled] {
+			background-color: transparent;
+			color: fade(@light-grey, 50%);
+			.iconColor(fade(@light-grey, 50%));
+			border: 1px solid fade(@black, 10%);
+			cursor: not-allowed;
+		}
+	}
+
+	&-flat {
+		background-color: transparent;
+		color: @black;
+		.iconColor(@black);
+		border: 1px solid fade(@light-grey, 20%);
+		&:hover, &:focus {
+			color: @green;
+			.iconColor(@green);
+			border: 1px solid @green;
+			svg {
+				path {
+					fill: @green;
+					stroke: @green;
+				}
+			}
+		}
+		&:active {
+			color: @dark-green;
+			.iconColor(@dark-green);
+			border: 1px solid @dark-green;
+			svg {
+				path {
+					fill: @dark-green;
+					stroke: @dark-green;
+				}
+			}
+		}
+		&[disabled] {
+			background-color: transparent;
+			color: fade(@light-grey, 50%);
+			.iconColor(fade(@light-grey, 50%));
+			border: 1px solid fade(@black, 10%);
+			cursor: not-allowed;
+		}
+	}
+
+	&-icon {
+		height: auto !important;
+		background-color: transparent;
+		&:hover, &:focus {
+			svg {
+				path {
+					fill: @green;
+					stroke: @green;
+				}
+			}
+		}
+		&:active {
+			svg {
+				path {
+					fill: @dark-green;
+					stroke: @dark-green;
+				}
+			}
+		}
+		&[disabled] {
+			opacity: 0.5;
+			color: fade(@light-grey, 50%);
+			.iconColor(fade(@light-grey, 50%));
+			cursor: not-allowed;
+		}
+	}
+
+	&-link {
+		height: auto !important;
+		border-radius: 0;
+		background-color: transparent;
+		color: @black;
+		.iconColor(@black);
+		border-bottom: 1px solid @light-grey;
+		&:hover, &:focus {
+			color: @green;
+			.iconColor(@green);
+			border-bottom: 1px solid @green;
+		}
+		&:active {
+			color: @dark-green;
+			.iconColor(@dark-green);
+			border-bottom: 1px solid @dark-green;
+		}
+		&[disabled] {
+			background-color: transparent;
+			color: fade(@light-grey, 50%);
+			.iconColor(fade(@light-grey, 50%));
+			border-bottom: 1px solid fade(@light-grey, 50%);
+			cursor: not-allowed;
+		}
+	}
+
+}
