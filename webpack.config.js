@@ -1,10 +1,10 @@
-// const path = require('path')
+const Path = require('path')
 const Autoprefixer = require('autoprefixer')
 const { CheckerPlugin } = require('awesome-typescript-loader')
 // const Webpack = require('webpack')
 
-// const appPath = Path.resolve(__dirname, '../src')
-// const libPath = [Path.resolve(__dirname, '../node_modules')]
+const appPath = Path.resolve(__dirname, '/src')
+const libPath = [Path.resolve(__dirname, '/node_modules')]
 
 module.exports = {
   entry: './src/index.tsx',
@@ -69,6 +69,36 @@ module.exports = {
           },
         ],
       },
+
+      {
+				test: /\.(less|css)$/,
+				include: __dirname + '/node_modules/antd/dist/antd.less',
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+					{
+						loader: 'postcss-loader',
+						options: {
+							plugins: () => [Autoprefixer],
+							sourceMap: true,
+							options: {
+								grid: true,
+							},
+						},
+					},
+					{
+						loader: 'less-loader',
+						options: {
+							sourceMap: true,
+						},
+					},
+				],
+			},
     ]
   },
 

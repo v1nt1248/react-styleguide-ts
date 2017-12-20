@@ -91,34 +91,30 @@ export class Button extends React.Component<ButtonProps, {}> {
 		}
 
     return (
-      <div>
-        <AntIcon type="mail" style={{fontSize: '36px'}}/>
-
-        <button
-          type={htmlType || 'button'}
-          style={btnStyle || {} }
-          className={rootClass || ''}
-          {...(disable ? { disabled: true } : {})}
-          onClick={(ev: React.MouseEvent<HTMLButtonElement>) => { this.handlerClick(ev) }}
-          onFocus={(ev: React.FocusEvent<HTMLButtonElement>) => { this.props.onFocus(ev) }}
-          onMouseEnter={onMouseEnter}
-          onMouseLeave={onMouseLeave}>
-          {
-            icon &&
-            iconPos === 'left' && 
-            (<AntIcon type={icon} style={btnIconStyle} />)
-          }
-          {
-            type !== 'icon' &&
-            <span style={btnTextStyle}>{btnText}</span>
-          }
-          {
-            icon &&
-            iconPos === 'right' && 
-            (<AntIcon type={icon} style={btnIconStyle} />)
-          }
-        </button>
-      </div>
+      <button
+        type={htmlType || 'button'}
+        style={btnStyle || {} }
+        className={rootClass || ''}
+        {...(disable ? { disabled: true } : {})}
+        onClick={(ev: React.MouseEvent<HTMLButtonElement>) => { this.handlerClick(ev) }}
+        onFocus={(ev: React.FocusEvent<HTMLButtonElement>) => { this.props.onFocus(ev) }}
+        onMouseEnter={onMouseEnter}
+        onMouseLeave={onMouseLeave}>
+        {
+          icon &&
+          iconPos === 'left' && 
+          (<AntIcon type={icon} style={btnIconStyle} />)
+        }
+        {
+          type !== 'icon' &&
+          <span style={btnTextStyle}>{btnText}</span>
+        }
+        {
+          icon &&
+          iconPos === 'right' && 
+          (<AntIcon type={icon} style={btnIconStyle} />)
+        }
+      </button>
 		)
 
   }

@@ -9,6 +9,7 @@ const glob = require('glob')
 
 module.exports = {
   title: 'React Style Guide Example',
+  skipComponentsWithoutExample: true,
   components: function () {
     return glob.sync(path.resolve(__dirname, 'src/components/**/*.tsx'))
       .filter(function (module) {
